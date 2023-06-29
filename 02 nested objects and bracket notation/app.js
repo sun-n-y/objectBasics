@@ -1,6 +1,13 @@
+//nested objects
+//set variable as property value
+//dot notation vs bracket notation
+
+const age = 690;
+let random = 'married';
+
 const person = {
   name: 'john',
-  age: 25,
+  age: age,
   married: true,
   siblings: ['anana', 'perter'],
   greet: function (name) {
@@ -9,20 +16,15 @@ const person = {
   sayHello(name) {
     console.log(`hello my name is ${name}`);
   },
+  job: {
+    title: 'developer',
+    company: {
+      name: 'codding company',
+      address: '1234 main st',
+    },
+  },
+  'random-value': 'random',
 };
+person['zname'] = 'h';
 
-console.log(person.name);
-
-const name = person.name;
-
-console.log(name);
-
-person.sayHello('kk');
-
-person.age = 16;
-person.city = 'chicago';
-
-//delete property
-delete person.siblings;
-
-console.log(person);
+console.log(person[random]);
