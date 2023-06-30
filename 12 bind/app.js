@@ -16,10 +16,7 @@ function greet(city, country) {
   );
 }
 
-// greet.call(john, 'san deigo', 'us');
-// greet.call(susan, 'san deigo', 'us');
-// greet.call({ name: 'adsfs', age: 99 }, 'san deigo', 'us');
+//assign , call it later
+const susanGreet = greet.bind(susan, 'toronto', 'canada');
 
-greet.apply(john, ['usa', 'japan']);
-greet.apply(susan, ['usa', 'japan']);
-greet.apply({ name: 'adsfs', age: 99 }, ['usa', 'japan']);
+susanGreet();
