@@ -1,22 +1,23 @@
-//
-function Account(name, intialBalance) {
-  this.name = name;
-  this.balance = intialBalance;
-  this.bank = 'ehhe';
+class Account {
+  constructor(name, intialBalance) {
+    this.name = name;
+    this.balance = intialBalance;
+  }
+  bank = 'chase';
+  deposit(amount) {
+    this.balance += amount;
+    console.log(`hello ${this.name}, your balance is ${this.balance}`);
+  }
 }
 
-const john = new Account('john', 200);
-const joe = new Account('joe', 0);
+const john = new Account('y', 9);
+console.log(john);
+console.log(john.name);
+john.deposit(100);
+console.log(john.bank);
 
-Account.prototype.bank = 'chase';
-Account.prototype.deposit = function (amount) {
-  this.balance += amount;
-  console.log(`hello ${this.name}, your balance is ${this.balance}`);
-};
-
-// console.log(john.constructor);
-// console.log(joe.deposit(100));
-
-console.log(joe);
-console.log({});
-console.log([]);
+const boob = new Account('q', 1000);
+console.log(boob);
+console.log(boob.name);
+boob.deposit(100);
+console.log(boob.bank);
