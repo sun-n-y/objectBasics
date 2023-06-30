@@ -2,10 +2,6 @@
 const john = {
   name: 'john',
   age: 34,
-  greet: function () {
-    console.log(this);
-    console.log(`hello i am ${this.name} and i am ${this.age} years old`);
-  },
 };
 
 const susan = {
@@ -13,13 +9,17 @@ const susan = {
   age: 29,
 };
 
-function greet() {
+function greet(city, country) {
   console.log(this);
-  console.log(`hello i am ${this.name} and i am ${this.age} years old`);
+  console.log(
+    `hello i am ${this.name} and i am ${this.age} years old and i live in ${city} ${country}`
+  );
 }
 
-greet.call(john);
-greet.call(susan);
-greet.call({ name: 'adsfs', age: 99 });
+// greet.call(john, 'san deigo', 'us');
+// greet.call(susan, 'san deigo', 'us');
+// greet.call({ name: 'adsfs', age: 99 }, 'san deigo', 'us');
 
-john.greet.call(susan);
+greet.apply(john, ['usa', 'japan']);
+greet.apply(susan, ['usa', 'japan']);
+greet.apply({ name: 'adsfs', age: 99 }, ['usa', 'japan']);
