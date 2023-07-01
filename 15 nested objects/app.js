@@ -1,8 +1,12 @@
 //
 
+const age = 50;
+
+const value = 'greet';
+
 const person = {
   name: 'john',
-  age: 25,
+  age,
   married: true,
   siblings: ['anna', 'kopo'],
   greet: function (name) {
@@ -11,10 +15,17 @@ const person = {
   sayHello(name) {
     console.log(`hello my name is ${name}`);
   },
+  job: {
+    title: 'developer',
+    company: {
+      name: 'coding',
+      address: '1234 main st',
+    },
+  },
+  'random-value': 'random',
 };
 
-console.log(person);
+console.log(person.job.company.address);
+console.log(person.age);
 
-const deleted = delete person.age;
-
-console.log(deleted);
+console.log(person[value]);
