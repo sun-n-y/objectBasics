@@ -1,22 +1,41 @@
 //this
 // points to the left of the dot
 
-const john = {
-  firstName: 'john',
-  lastName: 'anderson',
-  fullName: function (name) {
-    console.log(`my full name is ${name}`);
-  },
-};
+// const john = {
+//   firstName: 'john',
+//   lastName: 'anderson',
+//   fullName: function () {
+//
+//   },
+// };
 
-const tim = {
-  firstName: 'anna',
-  lastName: 'banana',
-  fullName: function () {
-    console.log(this);
-    console.log(`my full name is ${this.firstName} ${this.lastName}`);
-  },
-};
+// const tim = {
+//   firstName: 'anna',
+//   lastName: 'banana',
+//   fullName: function () {
+//     console.log(`my full name is ${this.firstName} ${this.lastName}`);
+//   },
+// };
 
-john.fullName('polo');
-tim.fullName();
+//factory funciton setup
+function createPerson(firstName, lastName) {
+  return {
+    firstName,
+    lastName,
+    fullName: function () {
+      console.log(
+        `my full name is ${this.firstName} ${this.lastName} and i love js`
+      );
+    },
+  };
+}
+
+const sp = createPerson('lebron', 'james');
+sp.fullName();
+
+const kp = createPerson('kobe', 'bryant');
+kp.fullName();
+
+const lp = createPerson('micheal', 'jordan');
+lp.fullName();
+console.log(lp.firstName);
