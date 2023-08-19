@@ -27,3 +27,5 @@ function createPerson(firstName, lastName) {
 
 const john = createPerson('polo', 'ralph');
 john.fullName();
+const wick = createPerson('olop', 'ralph');
+wick.fullName();
